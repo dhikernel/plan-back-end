@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c61ff82cbf0142a401a48a8161e1595a",
+    "content-hash": "cdeae39e6bf950e7cb234e508854dcec",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2867,6 +2867,60 @@
                 }
             ],
             "time": "2023-04-15T23:01:58+00:00"
+        },
+        {
+            "name": "signifly/laravel-domain-commands",
+            "version": "v0.0.8",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/signifly/laravel-domain-commands.git",
+                "reference": "2b18df738728e0e97e2f357c0b1964451526d2aa"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/signifly/laravel-domain-commands/zipball/2b18df738728e0e97e2f357c0b1964451526d2aa",
+                "reference": "2b18df738728e0e97e2f357c0b1964451526d2aa",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/framework": "^6.0|^7.0|^8.0",
+                "php": "^7.2|^8.0"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^4.0|^5.0",
+                "phpunit/phpunit": "^7.0|^8.0|^9.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Signifly\\Console\\DomainServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Signifly\\Console\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Morten Poul Jensen",
+                    "email": "mpj@signifly.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Artisan commands to Laravel apps that utilizes Domain Driven Design.",
+            "homepage": "https://github.com/signifly/laravel-domain-commands",
+            "support": {
+                "issues": "https://github.com/signifly/laravel-domain-commands/issues",
+                "source": "https://github.com/signifly/laravel-domain-commands/tree/v0.0.8"
+            },
+            "time": "2021-03-26T08:19:18+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",
