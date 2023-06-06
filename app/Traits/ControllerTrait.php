@@ -49,8 +49,16 @@ trait ControllerTrait
                     ->setStatusCode(Response::HTTP_CREATED, Response::$statusTexts[Response::HTTP_CREATED]);
             }
 
-        } catch (CustomException $exception) {
+        } catch (\Exception $exception) {
             return responseHTTP($exception->getCode(), $exception->getMessage());
+        }
+    }
+
+    public function edit($id)
+    {
+        if (!empty($this->repository)) {
+            return response()->json([$this->repository->edit($id)])
+                ->setStatusCode(Response::HTTP_OK, Response::$statusTexts[Response::HTTP_OK]);
         }
     }
 
