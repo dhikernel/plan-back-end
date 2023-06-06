@@ -5,14 +5,34 @@ declare(strict_types=1);
 namespace App\Domain\Product\Repositories;
 
 use App\Domain\Product\Models\Product;
+use App\Domain\Product\Resources\ProductCollection;
 use Exception;
 use Illuminate\Support\Facades\DB;
+use Spatie\QueryBuilder\AllowedFilter;
+use Spatie\QueryBuilder\QueryBuilder;
 
 class ProductRepository
 {
     public function index()
     {
-        return Product::orderBy('id')->get();
+        $query = QueryBuilder::for(Product::class)
+            ->allowedFilters([
+                AllowedFilter::partial('name'),
+            ])
+            ->defaultSort('created_at')
+            ->paginate(request('per_page', config('settings.AMOUNT_PAGINATE_DEFAULT')))
+            ->appends(request()->query());
+
+        $returnProductCollection = new ProductCollection($query);
+
+        return $returnProductCollection->resource;
+    }
+
+    public function edit($id)
+    {
+        $query = Product::find($id);
+
+        return $query;
     }
 
     public function store(array $request): Product
