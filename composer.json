@@ -11,7 +11,8 @@
         "laravel/framework": "^8.75",
         "laravel/sanctum": "^2.11",
         "laravel/tinker": "^2.5",
-        "signifly/laravel-domain-commands": "^0.0.8"
+        "signifly/laravel-domain-commands": "^0.0.8",
+        "spatie/laravel-query-builder": "^4.0"
     },
     "require-dev": {
         "facade/ignition": "^2.5",
