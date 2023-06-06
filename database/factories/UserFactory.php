@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Database\Eloquent\Factories\Factory as FactoryAlias;
 use Illuminate\Support\Str;
 
 class UserFactory extends Factory
@@ -12,7 +13,7 @@ class UserFactory extends Factory
      *
      * @return array
      */
-    public function definition()
+    public function definition(): array
     {
         return [
             'name' => $this->faker->name(),
@@ -26,9 +27,9 @@ class UserFactory extends Factory
     /**
      * Indicate that the model's email address should be unverified.
      *
-     * @return \Illuminate\Database\Eloquent\Factories\Factory
+     * @return FactoryAlias
      */
-    public function unverified()
+    public function unverified(): FactoryAlias
     {
         return $this->state(function (array $attributes) {
             return [
