@@ -36,6 +36,11 @@ class ProductController extends Controller
         return parent::store($request);
     }
 
+    public function edit($id)
+    {
+        return parent::edit($id);
+    }
+
     public function update(Request $request, int $id)
     {
         return parent::update($request, $id);
@@ -46,8 +51,4 @@ class ProductController extends Controller
         return parent::destroy($id);
     }
 
-    public function show($id)
-    {
-        return parent::show($id);
-    }
 }

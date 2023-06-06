@@ -13,6 +13,8 @@ use App\Domain\Product\Controllers\ProductController;
 
         Route::get('/list', [ProductController::class, 'index']);
 
+        Route::get('/edit/{id}', [ProductController::class, 'edit']);
+
         Route::post('/create', [ProductController::class, 'store']);
 
         Route::put('/update/{id}', [ProductController::class, 'update']);
