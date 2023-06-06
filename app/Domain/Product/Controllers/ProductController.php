@@ -10,7 +10,7 @@ use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
-    protected $repository;
+    protected ProductRepository $repository;
 
     protected array $validators = [
         'name' => 'required|string|max:255',
@@ -118,7 +118,6 @@ class ProductController extends Controller
      * )
      * )
      */
-
     public function edit($id)
     {
         return parent::edit($id);
@@ -156,7 +155,6 @@ class ProductController extends Controller
      * )
      * )
      */
-
     public function destroy(int $id)
     {
         return parent::destroy($id);
