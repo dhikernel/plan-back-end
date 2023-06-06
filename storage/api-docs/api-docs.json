@@ -1,0 +1,180 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Grupo Plan - API reference",
+        "description": "Documentation of each EndPoint for integration.",
+        "contact": {
+            "email": "dhipereira21@gmail.com"
+        },
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/api/products/list": {
+            "get": {
+                "tags": [
+                    "Product - List All Products"
+                ],
+                "summary": "List All Product",
+                "description": "List All Products",
+                "operationId": "517076312c44ffa4224def32118bbefb",
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "default": {
+                        "description": "Unidentified error"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ]
+            }
+        },
+        "/api/products/create": {
+            "post": {
+                "tags": [
+                    "Product - Create Product"
+                ],
+                "summary": "Create Record",
+                "description": "Create Record",
+                "operationId": "a2c98ad7c0b498cc7bb6768eb92292bc",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "example": {
+                                    "name": "Geladeira Frost Free",
+                                    "description": "Este produto é totalmente versátil.",
+                                    "brand": "Electrolux"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Success"
+                    },
+                    "default": {
+                        "description": "Unidentified error"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ]
+            }
+        },
+        "/api/products/update/{id}": {
+            "put": {
+                "tags": [
+                    "Product - Update Product"
+                ],
+                "summary": "Update Record",
+                "description": "Update Record",
+                "operationId": "34ab04033c1077d12dee4732ed20c862",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "example": {
+                                    "id": "7",
+                                    "name": "Geladeira Frost Free",
+                                    "description": "Este produto é totalmente versátil.",
+                                    "brand": "Electrolux"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "default": {
+                        "description": "Unidentified error"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ]
+            }
+        },
+        "/api/products/delete/{id}": {
+            "delete": {
+                "tags": [
+                    "Product - Delete Product"
+                ],
+                "summary": "Delete Record",
+                "description": "Delete Record",
+                "operationId": "978b7009f59deeeea214e8f47033e37a",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "Success"
+                    },
+                    "default": {
+                        "description": "Unidentified error"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ]
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "Product": {
+                "properties": {
+                    "id": {
+                        "description": "Id do Produto",
+                        "type": "integer"
+                    },
+                    "name": {
+                        "description": "Nome do produto",
+                        "type": "string"
+                    },
+                    "description": {
+                        "description": "Descrição do Produto",
+                        "type": "text"
+                    },
+                    "brand": {
+                        "description": "Marca do Produto",
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            }
+        }
+    }
+}

@@ -7,7 +7,16 @@ namespace App\Domain\Product\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-
+/**
+ * @OA\Schema(
+ *
+ * @OA\Property(property="id", type="integer", description="Id do Produto"),
+ * @OA\Property(property="name", type="string", description="Nome do produto"),
+ * @OA\Property(property="description", type="text", description="Descrição do Produto"),
+ * @OA\Property(property="brand", type="string", description="Marca do Produto")
+ * )
+ * Class Product
+ */
 class Product extends Model
 {
     use HasFactory;

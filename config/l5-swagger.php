@@ -5,7 +5,7 @@ return [
     'documentations' => [
         'default' => [
             'api' => [
-                'title' => 'L5 Swagger UI',
+                'title' => 'L5 Swagger UI - Grupo Plan',
             ],
 
             'routes' => [
