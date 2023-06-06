@@ -27,14 +27,14 @@ class ProductRepository
 
         return $returnProductCollection->resource;
     }
-
     public function edit($id)
     {
-        $query = Product::find($id);
-
-        return $query;
+        return Product::find($id);
     }
 
+    /**
+     * @throws Exception
+     */
     public function store(array $request): Product
     {
         try {
@@ -57,7 +57,6 @@ class ProductRepository
 
         return $updateProduct->fill($data)->save();
     }
-
     public function destroy(int $id): bool
     {
         return (bool) Product::destroy($id);

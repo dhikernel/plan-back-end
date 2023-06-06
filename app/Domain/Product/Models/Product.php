@@ -16,6 +16,8 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @OA\Property(property="brand", type="string", description="Marca do Produto")
  * )
  * Class Product
+ * @method static find($id)
+ * @method static create(array $request)
  */
 class Product extends Model
 {
